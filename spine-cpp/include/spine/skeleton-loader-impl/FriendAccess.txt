@@ -1,0 +1,11 @@
+friend class ISkeletonBinaryLoader;
+friend class ISkeletonJsonLoader;
+
+friend class BinaryLoader42;
+friend class JsonLoader42;
+
+friend class BinaryLoader40;
+friend class JsonLoader40;
+
+friend class BinaryLoader38;
+friend class JsonLoader38;
