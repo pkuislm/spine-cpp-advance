@@ -615,7 +615,7 @@ Animation *BinaryLoader38::readAnimation(const String &name, DataInput *input, S
     for (int i = 0, n = readVarint(input, true); i < n; ++i) {
         int index = readVarint(input, true);
         int frameCount = readVarint(input, true);
-        IkConstraintTimeline *timeline = new(__FILE__, __LINE__) IkConstraintTimeline(frameCount,index);
+        IkConstraintTimeline *timeline = new(__FILE__, __LINE__) IkConstraintTimeline(frameCount, index);
         for (int frameIndex = 0; frameIndex < frameCount; ++frameIndex) {
             float time = readFloat(input);
             float mix = readFloat(input);
@@ -663,7 +663,7 @@ Animation *BinaryLoader38::readAnimation(const String &name, DataInput *input, S
 
                         if (data->_spacingMode == SpacingMode_Length || data->_spacingMode == SpacingMode_Fixed) timelineScale = scale;
                     } else {
-                        timeline = new(__FILE__, __LINE__) PathConstraintPositionTimeline(frameCount,  index);
+                        timeline = new(__FILE__, __LINE__) PathConstraintPositionTimeline(frameCount, index);
 
                         if (data->_positionMode == PositionMode_Fixed) timelineScale = scale;
                     }
@@ -716,7 +716,7 @@ Animation *BinaryLoader38::readAnimation(const String &name, DataInput *input, S
 
                 size_t frameCount = (size_t)readVarint(input, true);
 
-                DeformTimeline *timeline = new(__FILE__, __LINE__) DeformTimeline(frameCount, frameCount+1, slotIndex, attachment);
+                DeformTimeline *timeline = new(__FILE__, __LINE__) DeformTimeline(frameCount, slotIndex, attachment);
 
                 for (size_t frameIndex = 0; frameIndex < frameCount; ++frameIndex) {
                     float time = readFloat(input);

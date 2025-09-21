@@ -44,6 +44,7 @@ namespace spine {
 
 	public:
 		explicit DeformTimeline(size_t frameCount, size_t bezierCount, int slotIndex, VertexAttachment *attachment);
+		explicit DeformTimeline(size_t frameCount, int slotIndex, VertexAttachment *attachment);
 
 		virtual void
 		apply(Skeleton &skeleton, float lastTime, float time, Vector<Event *> *pEvents, float alpha, MixBlend blend,

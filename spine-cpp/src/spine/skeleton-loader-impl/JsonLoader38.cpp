@@ -914,9 +914,7 @@ Animation *JsonLoader38::readAnimation(Json *root, SkeletonData *skeletonData) {
                 Vector<float> &verts = attachment->_vertices;
                 deformLength = weighted ? verts.size() / 3 * 2 : verts.size();
 
-                timeline = new(__FILE__, __LINE__) DeformTimeline(timelineMap->_size,
-                                                                  timelineMap->_size, slotIndex,
-                                                                  attachment);
+                timeline = new(__FILE__, __LINE__) DeformTimeline(timelineMap->_size, slotIndex, attachment);
 
                 for (valueMap = timelineMap->_child, frameIndex = 0; valueMap; valueMap = valueMap->_next, ++frameIndex) {
                     Json *vertices = Json::getItem(valueMap, "vertices");
